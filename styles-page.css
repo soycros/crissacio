@@ -1,0 +1,130 @@
+/* Estilos generales para la página cancion8 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Usamos flexbox para centrar los elementos */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alineación en la parte superior */
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+/* Imagen de fondo */
+.backgroundimage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Estilos para el título principal en la página cancion8 (en la esquina superior izquierda) */
+h1 {
+    font-size: 2rem; /* Tamaño reducido para la página secundaria */
+    font-weight: bold;
+    text-align: left; /* Alineamos el texto a la izquierda */
+    color: black;
+    position: absolute; /* Posicionamos el título en la esquina */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la parte izquierda */
+    padding: 0 20px; /* Agregamos un pequeño padding para mayor espacio si es necesario */
+
+    /* Simulación de borde alrededor del texto */
+    text-shadow: 
+        2px 2px 0px white,   
+        -2px -2px 0px white, 
+        2px -2px 0px white,  
+        -2px 2px 0px white;  
+}
+
+/* Logo que hace clic en el título */
+.logo-index {
+    text-decoration: none;
+}
+
+/* Barra de navegación */
+.song-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: relative;
+    top: 15px;
+    z-index: 1; /* Aseguramos que el navbar esté por encima */
+}
+/* Estilos para la lista dentro del nav */
+.name-song {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Usa flexbox para organizar los botones horizontalmente */
+    gap: 20px;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    position: absolute; /* Para posicionarlo en la esquina */
+    top: 10px;
+    right: 10px;
+}
+
+/* Estilos para los elementos de la lista */
+.name-pick a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.name-pick a:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    border-radius: 5px;
+}
+
+/* Estilos para el reproductor de música */
+.music-player {
+    margin-top: 75px; /* Agregamos un margen superior para separarlo del navbar */
+    width: 80%; /* Ajustamos el ancho */
+    max-width: 1000px; /* Máximo ancho */
+    display: flex;
+    justify-content: center; /* Centra el iframe horizontalmente */
+    position: relative; /* Para evitar que se superponga con el navbar */
+}
+
+/* Estilo para el iframe */
+.music-player iframe {
+    width: 100%;
+    height: 80vh; /* Aumenta la altura para que ocupe más espacio verticalmente */
+    max-width: 100%; /* Asegura que no se pase del ancho del contenedor */
+    border: none; /* Remueve el borde */
+    position: relative;
+    z-index: 0; /* Lo coloca por debajo del navbar */
+}
+
+/* Responsive: cuando la pantalla es pequeña */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .name-song {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .music-player iframe {
+        width: 100%;
+        max-width: 100%;
+    }
+}
