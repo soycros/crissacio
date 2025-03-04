@@ -1,4 +1,4 @@
-/* Estilos generales para la página cancion8 */
+/* Estilos generales para la página */
 body {
     margin: 0;
     padding: 0;
@@ -8,12 +8,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 
-    /* Usamos flexbox para centrar los elementos */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alineación en la parte superior */
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    height: 100vh;
 }
 
 /* Imagen de fondo */
@@ -27,26 +26,37 @@ body {
     z-index: -1;
 }
 
-/* Estilos para el título principal en la página cancion8 (en la esquina superior izquierda) */
-h1 {
-    font-size: 2rem; /* Tamaño reducido para la página secundaria */
-    font-weight: bold;
-    text-align: left; /* Alineamos el texto a la izquierda */
-    color: black;
-    position: absolute; /* Posicionamos el título en la esquina */
-    top: 20px; /* Distancia desde la parte superior */
-    left: 20px; /* Distancia desde la parte izquierda */
-    padding: 0 20px; /* Agregamos un pequeño padding para mayor espacio si es necesario */
-
-    /* Simulación de borde alrededor del texto */
-    text-shadow: 
-        2px 2px 0px white,   
-        -2px -2px 0px white, 
-        2px -2px 0px white,  
-        -2px 2px 0px white;  
+/* Overlay para oscurecer el fondo */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    opacity: 0; /* Inicialmente invisible */
+    display: none; /* Lo ocultamos inicialmente */
+    z-index: 0; /* Aseguramos que esté debajo del iframe */
+    transition: opacity 0.5s ease-in-out; /* Agregamos transición para suavizar la opacidad */
 }
 
-/* Logo que hace clic en el título */
+/* Estilos para el título principal */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0 20px;
+    text-shadow: 
+        2px 2px 0px white,
+        -2px -2px 0px white,
+        2px -2px 0px white,
+        -2px 2px 0px white;
+}
+
 .logo-index {
     text-decoration: none;
 }
@@ -59,22 +69,23 @@ h1 {
     padding: 10px 0;
     position: relative;
     top: 15px;
-    z-index: 1; /* Aseguramos que el navbar esté por encima */
+    z-index: 1;
 }
-/* Estilos para la lista dentro del nav */
+
+/* Lista dentro del nav */
 .name-song {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Usa flexbox para organizar los botones horizontalmente */
+    display: flex;
     gap: 20px;
-    justify-content: flex-start; /* Alinea los botones a la izquierda */
-    position: absolute; /* Para posicionarlo en la esquina */
+    justify-content: flex-start;
+    position: absolute;
     top: 10px;
     right: 10px;
 }
 
-/* Estilos para los elementos de la lista */
+/* Estilos para los enlaces dentro del nav */
 .name-pick a {
     display: inline-block;
     text-decoration: none;
@@ -94,45 +105,47 @@ h1 {
 
 /* Estilos para el reproductor de música */
 .music-player {
-    margin-top: 75px; /* Agregamos un margen superior para separarlo del navbar */
-    width: 80%; /* Ajustamos el ancho */
-    max-width: 1000px; /* Máximo ancho */
+    margin-top: 75px;
+    width: 80%;
+    max-width: 1000px;
     display: flex;
-    justify-content: center; /* Centra el iframe horizontalmente */
-    position: relative; /* Para evitar que se superponga con el navbar */
+    justify-content: center;
+    position: relative;
 }
 
 /* Estilo para el iframe */
 .music-player iframe {
     width: 100%;
-    height: 80vh; /* Aumenta la altura para que ocupe más espacio verticalmente */
-    max-width: 100%; /* Asegura que no se pase del ancho del contenedor */
-    border: none; /* Remueve el borde */
+    height: 472px;
+    max-width: 840px;
+    border: none;
     position: relative;
-    z-index: 0; /* Lo coloca por debajo del navbar */
+    z-index: 1;
+    display: block;
+    object-fit: cover; /* Esto asegura que el video se ajuste sin bordes */
 }
 
-
-/* Ajustes para evitar superposición en pantallas pequeñas */
-@media (max-width: 1150px) { /* Ajusta el tamaño según lo necesites */
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 1150px) {
     .song-bar {
-        flex-wrap: wrap; /* Permite que los elementos se acomoden debajo si no caben */
-        justify-content: center; /* Centra la lista cuando cambia de línea */
-        padding-top: 50px; /* Da más espacio al h1 */
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 50px;
     }
 
     .name-song {
-        position: static; /* Permite que se reubique automáticamente */
+        position: static;
         width: 100%;
-        justify-content: center; /* Centra la lista en móviles */
-        gap: 10px; /* Reduce la separación en móviles */
+        justify-content: center;
+        gap: 10px;
     }
 
     h1 {
-        position: relative; /* Evita que se sobreponga con otros elementos */
+        position: relative;
         width: 100%;
-        text-align: center; /* Centra el título en móviles */
+        text-align: center;
     }
+
     .music-player iframe {
         width: 100%;
         max-width: 100%;

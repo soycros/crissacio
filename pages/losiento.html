@@ -26,11 +26,53 @@
         </ul>
     </nav>
 
+    <!-- Overlay para oscurecer el fondo (inicialmente oculto) -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Imagen de fondo -->
     <img class="backgroundimage" src="../img/img1.png" alt="Imagen de fondo de la página">
+
     <!-- Iframe de música, visible solo en el index -->
     <section class="music-player">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        <iframe id="musicIframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
     </section>
 
+    <script>
+        // Crear una variable para el iframe y el overlay
+        const iframe = document.getElementById('musicIframe');
+        const overlay = document.getElementById('overlay');
+
+        // Función para controlar el estado de reproducción del video
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                // Cuando empieza la reproducción del video, mostramos el overlay
+                overlay.style.display = 'block';  // Aseguramos que el overlay se muestre
+                setTimeout(() => {
+                    overlay.style.opacity = '1';  // Aparece suavemente
+                }, 50); // Un pequeño delay para que se vea la transición
+            } else {
+                // Cuando el video no está reproduciéndose, ocultamos el overlay
+                overlay.style.opacity = '0';  // Ocultamos suavemente
+                setTimeout(() => {
+                    overlay.style.display = 'none'; // Ocultamos el overlay después de la transición
+                }, 500); // Debe coincidir con la duración de la transición
+            }
+        }
+
+        // Esta función inicializa el reproductor de YouTube y conecta los eventos
+        function onYouTubeIframeAPIReady() {
+            new YT.Player('musicIframe', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // Cargar la API de YouTube
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
 </body>
 </html>
