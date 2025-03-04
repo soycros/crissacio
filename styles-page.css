@@ -151,3 +151,31 @@ h1 {
         max-width: 100%;
     }
 }
+/* Ajustes para pantallas pequeñas */
+@media (max-width:8750px) {
+    .song-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .name-song {
+        position: static;
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .music-player iframe {
+        width: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+}

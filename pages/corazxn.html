@@ -34,7 +34,7 @@
 
     <!-- Iframe de música, visible solo en el index -->
     <section class="music-player">
-        <iframe id="musicIframe" src="https://www.youtube.com/embed/XNIb9oEYGgI?autoplay=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        <iframe id="musicIframe" src="https://www.youtube.com/embed/XNIb9oEYGgI?autoplay=0&enablejsapi=1" frameborder="0" allowfullscreen allow="autoplay"></iframe>
     </section>
 
     <script>
@@ -55,7 +55,7 @@
                 overlay.style.opacity = '0';  // Ocultamos suavemente
                 setTimeout(() => {
                     overlay.style.display = 'none'; // Ocultamos el overlay después de la transición
-                }, 500); // Debe coincidir con la duración de la transición
+                }, 500); // Debe coincidir con la duración  de la transición
             }
         }
 
