@@ -175,7 +175,7 @@ h1 {
 
     .music-player iframe {
         width: fit-content;
-        max-width: 100%;
+        max-width: 200%;
         height: fit-content;
     }
 }
