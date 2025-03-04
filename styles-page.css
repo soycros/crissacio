@@ -130,7 +130,7 @@ h1 {
     .song-bar {
         flex-wrap: wrap;
         justify-content: center;
-        padding-top: 50px;
+        padding-top: 20px;
     }
 
     .name-song {
@@ -144,6 +144,9 @@ h1 {
         position: relative;
         width: 100%;
         text-align: center;
+        left: 0;
+        right: 0;
+        transform: none;
     }
 
     .music-player iframe {
@@ -171,6 +174,9 @@ h1 {
         position: relative;
         width: 100%;
         text-align: center;
+        left: 0;
+        right: 0;
+        transform: none;
     }
 
     .music-player iframe {
