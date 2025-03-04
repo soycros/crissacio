@@ -164,14 +164,16 @@ h1 {
 
     .name-song {
         position: static;
+        padding: 40 px;
         width: 100%;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
         flex-wrap: wrap;
     }
 
     h1 {
         position: relative;
+        font-size: 4rem ;
         width: 100%;
         text-align: center;
         left: 0;
