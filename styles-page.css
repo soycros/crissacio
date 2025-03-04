@@ -126,7 +126,7 @@ h1 {
 }
 
 /* Ajustes para pantallas pequeñas */
-@media (max-width: 1150px) {
+@media (max-width: 1200px) {
     .song-bar {
         flex-wrap: wrap;
         justify-content: center;
@@ -142,6 +142,7 @@ h1 {
 
     h1 {
         position: relative;
+        font-size: 5rem;
         width: 100%;
         text-align: center;
         left: 0;
@@ -150,8 +151,8 @@ h1 {
     }
 
     .music-player iframe {
-        width: 100%;
-        max-width: 100%;
+        width: 530px;
+        max-width: 200%;
     }
 }
 /* Ajustes para pantallas pequeñas */
@@ -164,7 +165,7 @@ h1 {
 
     .name-song {
         position: static;
-        padding: 40 px;
+        padding: 60 px;
         width: 100%;
         justify-content: center;
         gap: 15px;
@@ -173,7 +174,7 @@ h1 {
 
     h1 {
         position: relative;
-        font-size: 4rem ;
+        font-size: 6rem ;
         width: 100%;
         text-align: center;
         left: 0;
@@ -182,8 +183,8 @@ h1 {
     }
 
     .music-player iframe {
-        width: fit-content;
-        max-width: 200%;
-        height: fit-content;
+        width: max-content;
+        max-width: 100%;
+        height: max-content;
     }
 }
