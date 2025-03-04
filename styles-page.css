@@ -152,7 +152,7 @@ h1 {
     }
 }
 /* Ajustes para pantallas pequeñas */
-@media (max-width:8750px) {
+@media (max-width:875px) {
     .song-bar {
         flex-wrap: wrap;
         justify-content: center;
