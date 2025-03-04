@@ -176,6 +176,10 @@ h1 {
     .music-player iframe {
         width: 100%;
         max-width: 100%;
-        object-fit: cover;
+        height: 0; /* Establecemos la altura a 0 inicialmente */
+        padding-bottom: 56.25%; /* Proporción 16:9 (100% / (16/9) = 56.25%) */
+        border: none;
+        object-fit: cover; /* Asegura que el contenido se ajuste sin bordes negros */
+        position: relative; 
     }
 }
