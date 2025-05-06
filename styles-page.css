@@ -33,11 +33,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
-    opacity: 0; /* Inicialmente invisible */
-    display: none; /* Lo ocultamos inicialmente */
-    z-index: 0; /* Aseguramos que esté debajo del iframe */
-    transition: opacity 0.5s ease-in-out; /* Agregamos transición para suavizar la opacidad */
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    display: none;
+    z-index: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* Estilos para el título principal */
@@ -61,28 +61,26 @@ h1 {
     text-decoration: none;
 }
 
-/* Barra de navegación */
+/* Barra de navegación (CORREGIDO PARA QUE FUNCIONE COMO PEDISTE) */
 .song-bar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    position: relative;
-    top: 15px;
-    z-index: 1;
-}
-
-/* Lista dentro del nav */
-.name-song {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 10;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+}
+
+/* Lista horizontal */
+.name-song {
+    display: flex;
+    flex-direction: row; /* 👈 Asegura dirección horizontal */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    flex-wrap: nowrap; /* 👈 Previene salto de línea */
 }
 
 /* Estilos para los enlaces dentro del nav */
@@ -90,9 +88,9 @@ h1 {
     display: inline-block;
     text-decoration: none;
     color: white;
-    font-size: 0.8rem;
-    padding: 5px 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     transition: 0.3s;
 }
@@ -122,22 +120,24 @@ h1 {
     position: relative;
     z-index: 1;
     display: block;
-    object-fit: cover; /* Esto asegura que el video se ajuste sin bordes */
+    object-fit: cover;
 }
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 1200px) {
     .song-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-top: 20px;
+        top: 5px;
+        right: 5px;
+        padding: 4px 6px;
     }
 
     .name-song {
-        position: static;
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
+        gap: 6px;
+    }
+
+    .name-pick a {
+        font-size: 0.65rem;
+        padding: 3px 8px;
     }
 
     h1 {
@@ -155,26 +155,27 @@ h1 {
         max-width: 200%;
     }
 }
-/* Ajustes para pantallas pequeñas */
-@media (max-width:875px) {
+
+@media (max-width: 875px) {
     .song-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-top: 10px;
+        top: 5px;
+        right: 5px;
+        padding: 3px 5px;
     }
 
     .name-song {
-        position: static;
-        padding: 60 px;
-        width: 100%;
-        justify-content: center;
-        gap: 15px;
+        gap: 5px;
         flex-wrap: wrap;
+    }
+
+    .name-pick a {
+        font-size: 0.6rem;
+        padding: 3px 6px;
     }
 
     h1 {
         position: relative;
-        font-size: 6rem ;
+        font-size: 6rem;
         width: 100%;
         text-align: center;
         left: 0;

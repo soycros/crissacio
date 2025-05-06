@@ -77,6 +77,7 @@ h1 {
     background-color: rgba(0, 0, 0, 0.7); /* Fondo gris alrededor de cada botón */
     border-radius: 5px; /* Bordes redondeados */
     transition: 0.3s;
+    margin: 10px;
 }
 
 .name-pick a:hover {
